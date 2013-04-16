@@ -1,0 +1,77 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('openPrint - Coordinación de Estudiantes ' . date ( 'Y' ) ) -> setAutoEscape ( false ) ?>
+
+        <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath() . '/css/bootstrap-responsive.min.css')
+                        ->prependStylesheet($this->basePath() . '/css/style.css')
+                        ->prependStylesheet($this->basePath() . '/css/sticky.css')
+                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+                                      ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+                                      ->prependFile($this->basePath() . '/js/jquery.min.js') ?>
+
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('openPrint') ?></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
+                            <li><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Imprimir') ?></a></li>
+                            <li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Mi cuenta') ?>
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">Cambiar datos</a>
+									</li>
+									<li>
+										<a href="#">Cantidad de Impresiones</a>
+									</li>
+								</ul>
+							</li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+		<div class="footer">
+        <div class="container">
+            <?php echo $this->content; ?>
+            <hr>
+            <footer>
+                <p>&copy; <?php echo date('Y') ?> por Equipo Servidor - Coordinación de Estudiantes</p>
+            </footer>
+        </div> <!-- /container -->
+        <?php echo $this->inlineScript() ?>
+		</div>
+		<div id="footer">
+			<div class="container">
+				<div id="contFooter" class="container">
+					<p id="leftFooter" class="muted credit">Sitio diseñado y desarrollado por <a id="zpfooter" href="http://wordpress.zeroproject.cl">ZeroProject</a></p>
+					<img id="logoFooter" src="img/usach.png" alt="ul" />
+					<p id="rightFooter" class="muted credit">Departamento de Matemática y Ciencia de la Computación<br />
+					Facultad de Ciencia<br />
+					Universidad de Santiago de Chile</p>
+				</div><!-- contFooter -->
+			</div><!-- container -->
+		</div><!-- footer -->
+    </body>
+</html>
